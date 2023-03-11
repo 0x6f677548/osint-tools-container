@@ -13,19 +13,15 @@ RUN apt-get update \
 && apt-get purge -y --auto-remove \
 && rm -rf /var/lib/apt/lists/*
 
-
-
 #holehe
 RUN git clone https://github.com/megadose/holehe.git \
 && cd holehe/ \
 && python3 setup.py install
 
-
 #buster
 RUN git clone https://github.com/sham00n/buster \
 && cd buster \
 && python3 setup.py install
-
 
 #sherlock
 RUN git clone https://github.com/sherlock-project/sherlock.git \
