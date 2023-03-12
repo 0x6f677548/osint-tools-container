@@ -32,3 +32,9 @@ RUN git clone https://github.com/sherlock-project/sherlock.git \
 RUN git clone https://github.com/soxoj/maigret \
 && cd maigret \
 && pip3 install -r requirements.txt
+
+#pwnedornot
+RUN git clone git clone https://github.com/thewhiteh4t/pwnedOrNot.git \
+&& cd pwnedOrNot \
+&& chmod +x install.sh \
+&& ./install.sh
