@@ -13,28 +13,39 @@ RUN apt-get update \
 && apt-get purge -y --auto-remove \
 && rm -rf /var/lib/apt/lists/*
 
+#create OSINT folder
+RUN mkdir /osint
+
+#change directory
+WORKDIR /osint
+
 #holehe
 RUN git clone https://github.com/megadose/holehe.git \
 && cd holehe/ \
 && python3 setup.py install
 
 #buster
-RUN git clone https://github.com/sham00n/buster \
+RUN git clone https://github.com/sham00n/buster.git \
 && cd buster \
 && python3 setup.py install
 
-#sherlock
+#sherlock - search username across social networks
 RUN git clone https://github.com/sherlock-project/sherlock.git \
 && cd sherlock \
 && python3 -m pip install -r requirements.txt
 
-#maigret
-RUN git clone https://github.com/soxoj/maigret \
+#maigret - search for usernames across social networks
+RUN git clone https://github.com/soxoj/maigret.git \
 && cd maigret \
 && pip3 install -r requirements.txt
 
 #pwnedornot
-RUN git clone git clone https://github.com/thewhiteh4t/pwnedOrNot.git \
+RUN git clone https://github.com/thewhiteh4t/pwnedOrNot.git \
 && cd pwnedOrNot \
 && chmod +x install.sh \
 && ./install.sh
+
+#ignorant
+RUN git clone https://github.com/megadose/ignorant.git \
+&& cd ignorant \
+&& python3 setup.py install
