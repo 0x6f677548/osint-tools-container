@@ -45,6 +45,10 @@ RUN git clone https://github.com/thewhiteh4t/pwnedOrNot.git \
 && chmod +x install.sh \
 && ./install.sh
 
+#add pwnedOrNot/config.json to pwnedornot
+COPY pwnedOrNot/config.json /osint/pwnedOrNot/config.json
+
+
 #ignorant
 RUN git clone https://github.com/megadose/ignorant.git \
 && cd ignorant \
